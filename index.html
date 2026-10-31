@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do vídeo para a panela: 10 pratos completos por R$ 6,99 | PGP Culinária</title>
+<meta name="description" content="10 pratos do dia a dia explicados do início ao prato, com tudo o que os vídeos rápidos não mostram. Caderno digital por R$ 6,99, acesso imediato no e-mail.">
+<meta property="og:title" content="Do vídeo para a panela: 10 pratos completos">
+<meta property="og:description" content="Tudo o que os vídeos rápidos de receita não mostram. R$ 6,99, acesso imediato.">
+<meta property="og:image" content="https://pgpwebvendas-glitch.github.io/capa-pratos.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #0f2a1d;
+    --verde-claro: #173d2a;
+    --dourado: #e9c46a;
+    --texto: #f4efe6;
+    --suave: #c9c2b4;
+    --botao: #22c55e;
+    --vermelho: #b3261e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--verde);
+    color: var(--texto);
+    font-family: Inter, system-ui, sans-serif;
+    line-height: 1.55;
+    padding-bottom: 84px;
+  }
+  .natal {
+    background: var(--vermelho);
+    text-align: center;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: .9rem;
+  }
+  section { max-width: 620px; margin: 0 auto; padding: 36px 16px; }
+  h1, h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--dourado);
+    line-height: 1.2;
+    text-align: center;
+  }
+  h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); margin: 8px 0 12px; }
+  h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); margin: 0 0 20px; }
+  .lead { color: var(--suave); text-align: center; font-size: 1.05rem; margin: 0 0 24px; }
+  img { width: 100%; height: auto; border-radius: 14px; display: block; }
+  .cta {
+    display: block;
+    background: var(--botao);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 18px 16px;
+    border-radius: 12px;
+    margin: 20px 0 8px;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, .35);
+  }
+  .cta:hover { filter: brightness(1.08); }
+  .selos { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 16px; color: var(--suave); font-size: .85rem; }
+  .card { background: var(--verde-claro); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+  .dor::before { content: "😩 "; }
+  .check { padding-left: 44px; position: relative; }
+  .check::before { content: "✔"; position: absolute; left: 16px; top: 14px; color: var(--dourado); font-weight: 800; }
+  .lista-pratos { columns: 2; column-gap: 16px; padding: 0; list-style: none; margin: 0; }
+  .lista-pratos li { break-inside: avoid; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .lista-pratos span { color: var(--dourado); font-weight: 800; margin-right: 6px; }
+  .preco { text-align: center; background: var(--verde-claro); border: 2px solid var(--dourado); border-radius: 16px; padding: 24px 16px; }
+  .preco .valor { font-size: 3.2rem; font-weight: 800; color: var(--dourado); line-height: 1; margin: 8px 0; }
+  .preco .detalhe { color: var(--suave); margin: 0; }
+  .extras { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .extras p { font-size: .9rem; margin: 8px 0 0; text-align: center; }
+  .garantia { display: flex; gap: 16px; align-items: center; }
+  .garantia .selo {
+    flex: 0 0 84px; height: 84px; border-radius: 50%;
+    border: 3px solid var(--dourado); color: var(--dourado);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-weight: 800; line-height: 1.1; text-align: center;
+  }
+  .garantia .selo b { font-size: 1.8rem; }
+  details { background: var(--verde-claro); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+  summary { font-weight: 600; cursor: pointer; }
+  details p { color: var(--suave); margin: 10px 0 0; }
+  footer { text-align: center; color: var(--suave); font-size: .75rem; padding: 24px 16px; }
+  .fixo {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 42, 29, .97);
+    border-top: 1px solid rgba(233, 196, 106, .3);
+    padding: 10px 16px;
+  }
+  .fixo .cta { max-width: 588px; margin: 0 auto; padding: 14px; font-size: 1rem; }
+</style>
+</head>
+<body>
+
+<div class="natal" id="natal" hidden></div>
+
+<section>
+  <h1>O vídeo de 30 segundos não conta tudo. Este caderno conta.</h1>
+  <p class="lead">10 pratos do dia a dia explicados do primeiro corte até o prato servido, com os detalhes que os vídeos rápidos cortam.</p>
+  <img src="capa-pratos.jpg" alt="Capa do caderno Do vídeo para a panela: 10 pratos completos" width="800" height="667">
+  <a class="cta" href="https://pay.cakto.com.br/396tphf">QUERO MEU CADERNO POR R$ 6,99</a>
+  <div class="selos"><span>⚡ Acesso imediato no e-mail</span><span>🔒 Pagamento seguro</span><span>🛡️ Garantia de 7 dias</span></div>
+</section>
+
+<section>
+  <h2>Você reconhece isso?</h2>
+  <div class="card dor">O molho empelota e a massa fica seca depois de misturar.</div>
+  <div class="card dor">O arroz seca antes de cozinhar e o frango fica irregular.</div>
+  <div class="card dor">A omelete gruda, rasga ou fica borrachuda.</div>
+  <div class="card dor">O recheio solta água e o purê desaparece na travessa.</div>
+  <div class="card dor">A massa passa do ponto e o alho fica amargo.</div>
+  <p class="lead" style="margin-top:20px">Não é falta de jeito. O vídeo mostra o prato pronto e corta justamente a parte que importa: quanto usar, quanto tempo, em que fogo e como saber que deu certo.</p>
+</section>
+
+<section>
+  <h2>O que tem em cada receita</h2>
+  <div class="card check"><b>O problema que você já viveu</b> logo no começo, e como evitar.</div>
+  <div class="card check"><b>8 etapas claras</b>, com quantidades em gramas e mililitros, tempo, intensidade do fogo e utensílios.</div>
+  <div class="card check"><b>"O detalhe que faz diferença":</b> o ponto exato em que a maioria erra.</div>
+  <div class="card check"><b>"Confira os sinais":</b> como saber, olhando e provando, que deu certo.</div>
+  <div class="card check"><b>"Se sair diferente, faça assim":</b> o conserto rápido quando algo foge do esperado.</div>
+  <div class="card check"><b>Guia de segurança e conservação</b> para guardar e reaquecer as sobras do jeito certo.</div>
+</section>
+
+<section>
+  <h2>Os 10 pratos</h2>
+  <ul class="lista-pratos">
+    <li><span>01</span>Penne cremoso com brócolis</li>
+    <li><span>02</span>Penne ao tomate com atum</li>
+    <li><span>03</span>Arroz de frango com legumes</li>
+    <li><span>04</span>Frango com batatas ao forno</li>
+    <li><span>05</span>Macarrão com legumes salteados</li>
+    <li><span>06</span>Omelete de queijo e cebolinha</li>
+    <li><span>07</span>Escondidinho de carne moída</li>
+    <li><span>08</span>Espaguete ao alho e óleo</li>
+    <li><span>09</span>Panqueca de frango ao tomate</li>
+    <li><span>10</span>Frango cremoso com milho</li>
+  </ul>
+  <p class="lead" style="margin-top:20px">Ingredientes fáceis de encontrar, de 1 a 3 porções e preparos de 10 a 55 minutos.</p>
+</section>
+
+<section>
+  <h2>Para quem é</h2>
+  <div class="card check">Para quem está aprendendo a cozinhar e cansou de jogar comida fora.</div>
+  <div class="card check">Para quem cozinha para uma a três pessoas e quer trocar o delivery por comida de verdade.</div>
+  <div class="card check">Para quem segue receitas de vídeo e nunca consegue o mesmo resultado.</div>
+</section>
+
+<section id="oferta">
+  <div class="preco">
+    <p class="detalhe">Caderno digital completo, 24 páginas</p>
+    <div class="valor">R$ 6,99</div>
+    <p class="detalhe">Menos de R$ 0,70 por receita. Menos que um lanche no delivery.</p>
+    <a class="cta" href="https://pay.cakto.com.br/396tphf">QUERO MEU CADERNO AGORA</a>
+    <div class="selos"><span>Pix, cartão e outros</span><span>Liberação na hora no Pix</span></div>
+  </div>
+
+  <h2 style="margin-top:36px">E já pensando nas festas...</h2>
+  <p class="lead">No pagamento, você pode adicionar ao mesmo pedido, se quiser:</p>
+  <div class="extras">
+    <div><img src="capa-natal.jpg" alt="Capa: Sabores de Natal, 10 receitas salgadas" width="800" height="667" loading="lazy"><p>10 receitas salgadas para a ceia de Natal e Ano-Novo</p></div>
+    <div><img src="capa-sobremesas.jpg" alt="Capa: Doces de festa, 5 sobremesas" width="800" height="667" loading="lazy"><p>5 sobremesas de Natal e Ano-Novo</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="card garantia">
+    <div class="selo"><b>7</b>DIAS</div>
+    <div><b>Garantia de 7 dias.</b> Se o caderno não for para você, peça o reembolso em até 7 dias após a compra e receba seu dinheiro de volta.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Perguntas frequentes</h2>
+  <details><summary>Como eu recebo o caderno?</summary><p>Assim que o pagamento é aprovado, o link de acesso chega no e-mail que você informou na compra. No Pix, a aprovação é na hora.</p></details>
+  <details><summary>É um livro físico?</summary><p>Não. É um caderno digital em PDF, que você abre no celular, tablet ou computador e também pode imprimir.</p></details>
+  <details><summary>Preciso de equipamento especial?</summary><p>Não. As receitas usam panelas, frigideira e forno comuns. Os utensílios de cada prato estão indicados na receita.</p></details>
+  <details><summary>Nunca cozinhei. Vou conseguir?</summary><p>O caderno foi feito para isso: cada etapa diz o que fazer, quanto usar e como saber que deu certo, e mostra o que fazer quando algo sai diferente.</p></details>
+  <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia para pedir o reembolso.</p></details>
+</section>
+
+<section>
+  <a class="cta" href="https://pay.cakto.com.br/396tphf">QUERO COZINHAR SEM ERRAR O BÁSICO</a>
+</section>
+
+<footer>
+  PGP Culinária · Imagens ilustrativas · Pagamento processado pela Cakto
+</footer>
+
+<div class="fixo"><a class="cta" href="https://pay.cakto.com.br/396tphf">QUERO POR R$ 6,99</a></div>
+
+<script>
+  // Contagem real até o Natal; some depois do dia 25/12
+  const hoje = new Date();
+  const natal = new Date(hoje.getFullYear(), 11, 25);
+  const dias = Math.ceil((natal - hoje) / 86400000);
+  if (dias > 0) {
+    const barra = document.getElementById("natal");
+    barra.textContent = `🎄 Faltam ${dias} ${dias === 1 ? "dia" : "dias"} para o Natal. Garanta suas receitas a tempo.`;
+    barra.hidden = false;
+  }
+</script>
+</body>
+</html>
