@@ -35,12 +35,36 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background: var(--vermelho);
+    background: linear-gradient(90deg, #8f1d17, var(--vermelho), #8f1d17);
+    border-bottom: 3px solid var(--dourado);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .45);
+    padding: 10px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 8px 16px;
-    font-weight: 600;
-    font-size: .9rem;
+  }
+  .natal[hidden] { display: none; }
+  .natal .rotulo {
+    font-weight: 800;
+    font-size: clamp(1rem, 4.2vw, 1.25rem);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .natal .tempo {
+    font-weight: 800;
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    line-height: 1.1;
+    color: var(--dourado);
     font-variant-numeric: tabular-nums;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+    animation: pulsar 1.2s ease-in-out infinite;
+  }
+  @keyframes pulsar {
+    50% { transform: scale(1.06); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .natal .tempo { animation: none; }
   }
   section { max-width: 620px; margin: 0 auto; padding: 36px 16px; }
   h1, h2 {
@@ -103,7 +127,10 @@
 </head>
 <body>
 
-<div class="natal" id="natal" hidden></div>
+<div class="natal" id="natal" hidden>
+  <span class="rotulo">🎄 Oferta válida até o Natal</span>
+  <span class="tempo" id="tempo"></span>
+</div>
 
 <section>
   <h1>O vídeo de 30 segundos não conta tudo. Este caderno conta.</h1>
@@ -211,7 +238,7 @@
     const d = Math.floor(s / 86400);
     const h = Math.floor(s % 86400 / 3600);
     const m = Math.floor(s % 3600 / 60);
-    barra.textContent = `🎄 Oferta válida até o Natal: ${d}d ${doisDigitos(h)}:${doisDigitos(m)}:${doisDigitos(s % 60)}`;
+    document.getElementById("tempo").textContent = `${d}d ${doisDigitos(h)}:${doisDigitos(m)}:${doisDigitos(s % 60)}`;
     barra.hidden = false;
   }
   atualizar();
