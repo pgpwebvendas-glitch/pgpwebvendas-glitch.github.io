@@ -32,11 +32,15 @@
     padding-bottom: 84px;
   }
   .natal {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background: var(--vermelho);
     text-align: center;
     padding: 8px 16px;
     font-weight: 600;
     font-size: .9rem;
+    font-variant-numeric: tabular-nums;
   }
   section { max-width: 620px; margin: 0 auto; padding: 36px 16px; }
   h1, h2 {
@@ -197,15 +201,21 @@
 <div class="fixo"><a class="cta" href="https://pay.cakto.com.br/396tphf">QUERO POR R$ 6,99</a></div>
 
 <script>
-  // Contagem real até o Natal; some depois do dia 25/12
-  const hoje = new Date();
-  const natal = new Date(hoje.getFullYear(), 11, 25);
-  const dias = Math.ceil((natal - hoje) / 86400000);
-  if (dias > 0) {
-    const barra = document.getElementById("natal");
-    barra.textContent = `🎄 Faltam ${dias} ${dias === 1 ? "dia" : "dias"} para o Natal. Garanta suas receitas a tempo.`;
+  // Contagem real até o Natal (25/12 00:00, horário do visitante); some depois disso
+  const barra = document.getElementById("natal");
+  const natal = new Date(new Date().getFullYear(), 11, 25);
+  const doisDigitos = (n) => String(n).padStart(2, "0");
+  function atualizar() {
+    const s = Math.floor((natal - new Date()) / 1000);
+    if (s <= 0) { barra.hidden = true; return; }
+    const d = Math.floor(s / 86400);
+    const h = Math.floor(s % 86400 / 3600);
+    const m = Math.floor(s % 3600 / 60);
+    barra.textContent = `🎄 Faltam ${d}d ${doisDigitos(h)}:${doisDigitos(m)}:${doisDigitos(s % 60)} para o Natal. Garanta suas receitas a tempo.`;
     barra.hidden = false;
   }
+  atualizar();
+  setInterval(atualizar, 1000);
 </script>
 </body>
 </html>
